@@ -10,7 +10,7 @@
 	<packaging>pom</packaging>
 	<groupId>ro.iss</groupId>
 	<artifactId>guru-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>guru-clinic</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -39,6 +39,6 @@
     </build>
     <scm>
     	<developerConnection>scm:git:git@github.com:CornelZ/guru-clinic.git</developerConnection>
-      <tag>guru-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
