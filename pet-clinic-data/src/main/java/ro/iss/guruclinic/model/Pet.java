@@ -2,8 +2,9 @@ package ro.iss.guruclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends BaseEntity {
 
+  private static final long serialVersionUID = 7501562297002203294L;
   private PetType petType;
   private Owner owner;
   private LocalDate birthDate;
