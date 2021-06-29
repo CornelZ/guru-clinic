@@ -1,14 +1,16 @@
 package ro.iss.guruclinic.services.map;
 
 import java.util.Set;
+import org.springframework.stereotype.Service;
 import ro.iss.guruclinic.model.Vet;
-import ro.iss.guruclinic.services.CrudService;
+import ro.iss.guruclinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+@Service
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
   @Override
   public Vet save(Vet obj) {
-    return super.save(obj.getId(), obj);
+    return super.save(obj);
   }
 
   @Override

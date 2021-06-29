@@ -1,14 +1,16 @@
 package ro.iss.guruclinic.services.map;
 
 import java.util.Set;
+import org.springframework.stereotype.Service;
 import ro.iss.guruclinic.model.Pet;
-import ro.iss.guruclinic.services.CrudService;
+import ro.iss.guruclinic.services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
   @Override
   public Pet save(Pet obj) {
-    return super.save(obj.getId(), obj);
+    return super.save(obj);
   }
 
   @Override
@@ -29,5 +31,10 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
   @Override
   public void delete(Pet obj) {
     super.delete(obj);
+  }
+
+  @Override
+  public Pet findByID(Long id) {
+    return null;
   }
 }

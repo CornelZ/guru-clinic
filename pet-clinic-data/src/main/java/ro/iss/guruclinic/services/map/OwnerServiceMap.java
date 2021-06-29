@@ -1,15 +1,16 @@
 package ro.iss.guruclinic.services.map;
 
 import java.util.Set;
+import org.springframework.stereotype.Service;
 import ro.iss.guruclinic.model.Owner;
-import ro.iss.guruclinic.services.CrudService;
+import ro.iss.guruclinic.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long>
-    implements CrudService<Owner, Long> {
+@Service
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
   @Override
   public Owner save(Owner obj) {
-    return super.save(obj.getId(), obj);
+    return super.save(obj);
   }
 
   @Override
@@ -30,5 +31,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long>
   @Override
   public void delete(Owner obj) {
     super.delete(obj);
+  }
+
+  @Override
+  public Owner findByLastName(String lastName) {
+    return null;
   }
 }
