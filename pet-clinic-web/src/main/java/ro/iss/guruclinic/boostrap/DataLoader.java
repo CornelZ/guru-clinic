@@ -1,8 +1,10 @@
 package ro.iss.guruclinic.boostrap;
 
+import java.time.LocalDate;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import ro.iss.guruclinic.model.Owner;
+import ro.iss.guruclinic.model.Pet;
 import ro.iss.guruclinic.model.PetType;
 import ro.iss.guruclinic.model.Vet;
 import ro.iss.guruclinic.services.OwnerService;
@@ -37,11 +39,33 @@ public class DataLoader implements CommandLineRunner {
     Owner owner1 = new Owner();
     owner1.setFirstName("Michael");
     owner1.setLastName("Weston");
+    owner1.setAddress("Strada Libertatii");
+    owner1.setCity("Braila");
+    owner1.setTelephone("112233");
+
+    Pet mikesPet = new Pet();
+    mikesPet.setPetType(dog);
+    mikesPet.setOwner(owner1);
+    mikesPet.setBirthDate(LocalDate.now());
+    mikesPet.setName("Rosco");
+
+    owner1.getPets().add(mikesPet);
     ownerService.save(owner1);
 
     Owner owner2 = new Owner();
     owner2.setFirstName("Fiona");
     owner2.setLastName("Glenanne");
+    owner2.setAddress("Intrare mosului");
+    owner2.setCity("Bucicuresti");
+    owner2.setTelephone("998877");
+
+    Pet fionasPet = new Pet();
+    fionasPet.setPetType(cat);
+    fionasPet.setOwner(owner2);
+    fionasPet.setBirthDate(LocalDate.now());
+    fionasPet.setName("Kitty");
+
+    owner2.getPets().add(fionasPet);
     ownerService.save(owner2);
 
     System.out.println("Loaded Owners....");
