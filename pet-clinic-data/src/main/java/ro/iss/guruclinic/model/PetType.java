@@ -1,6 +1,8 @@
 package ro.iss.guruclinic.model;
 
-public class PetType {
+public class PetType extends BaseEntity {
+
+  private static final long serialVersionUID = -27145277850386722L;
   private String name;
 
   public String getName() {
@@ -9,5 +11,9 @@ public class PetType {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public static long getSerialversionuid() {
+    return serialVersionUID;
   }
 }
