@@ -1,5 +1,5 @@
 package ro.iss.guruclinic.services;
 
-import ro.iss.guruclinic.model.Specialty;
+import ro.iss.guruclinic.model.Speciality;
 
-public interface SpecialtyService extends CrudService<Specialty, Long> {}
+public interface SpecialtyService extends CrudService<Speciality, Long> {}

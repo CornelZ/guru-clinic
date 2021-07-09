@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import ro.iss.guruclinic.model.Owner;
 import ro.iss.guruclinic.model.Pet;
 import ro.iss.guruclinic.model.PetType;
-import ro.iss.guruclinic.model.Specialty;
+import ro.iss.guruclinic.model.Speciality;
 import ro.iss.guruclinic.model.Vet;
 import ro.iss.guruclinic.services.OwnerService;
 import ro.iss.guruclinic.services.PetTypeService;
@@ -48,15 +48,15 @@ public class DataLoader implements CommandLineRunner {
     cat.setName("cat");
     petTypeService.save(cat);
 
-    Specialty radiology = new Specialty();
+    Speciality radiology = new Speciality();
     radiology.setDescription("Radiology");
     specialtyService.save(radiology);
 
-    Specialty surgery = new Specialty();
+    Speciality surgery = new Speciality();
     surgery.setDescription("Surgery");
     specialtyService.save(surgery);
 
-    Specialty dentistry = new Specialty();
+    Speciality dentistry = new Speciality();
     dentistry.setDescription("Dentistry");
     specialtyService.save(dentistry);
 
