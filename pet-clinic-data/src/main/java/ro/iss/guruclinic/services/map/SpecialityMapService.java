@@ -2,25 +2,25 @@ package ro.iss.guruclinic.services.map;
 
 import java.util.Set;
 import org.springframework.stereotype.Service;
-import ro.iss.guruclinic.model.Speciality;
-import ro.iss.guruclinic.services.SpecialtyService;
+import ro.iss.guruclinic.model.Specialty;
+import ro.iss.guruclinic.services.SpecialityService;
 
 @Service
-public class SpecialtyServiceMap extends AbstractMapService<Speciality, Long>
-    implements SpecialtyService {
+public class SpecialityMapService extends AbstractMapService<Specialty, Long>
+    implements SpecialityService {
 
   @Override
-  public Speciality save(Speciality obj) {
+  public Specialty save(Specialty obj) {
     return super.save(obj);
   }
 
   @Override
-  public Set<Speciality> findAll() {
+  public Set<Specialty> findAll() {
     return super.findAll();
   }
 
   @Override
-  public Speciality findById(Long id) {
+  public Specialty findById(Long id) {
     return super.findById(id);
   }
 
@@ -30,7 +30,7 @@ public class SpecialtyServiceMap extends AbstractMapService<Speciality, Long>
   }
 
   @Override
-  public void delete(Speciality obj) {
+  public void delete(Specialty obj) {
     super.delete(obj);
   }
 }

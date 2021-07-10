@@ -6,7 +6,7 @@ import ro.iss.guruclinic.model.PetType;
 import ro.iss.guruclinic.services.PetTypeService;
 
 @Service
-public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
+public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
   @Override
   public PetType save(PetType obj) {

@@ -6,7 +6,7 @@ import ro.iss.guruclinic.model.Pet;
 import ro.iss.guruclinic.services.PetService;
 
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
 
   @Override
   public Pet save(Pet obj) {
@@ -31,10 +31,5 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
   @Override
   public void delete(Pet obj) {
     super.delete(obj);
-  }
-
-  @Override
-  public Pet findByID(Long id) {
-    return null;
   }
 }

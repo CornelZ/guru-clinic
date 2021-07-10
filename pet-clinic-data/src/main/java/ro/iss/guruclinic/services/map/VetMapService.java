@@ -3,16 +3,16 @@ package ro.iss.guruclinic.services.map;
 import java.util.Set;
 import org.springframework.stereotype.Service;
 import ro.iss.guruclinic.model.Vet;
-import ro.iss.guruclinic.services.SpecialtyService;
+import ro.iss.guruclinic.services.SpecialityService;
 import ro.iss.guruclinic.services.VetService;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
-  private final SpecialtyService specialtyService;
+  private final SpecialityService specialityService;
 
-  public VetServiceMap(SpecialtyService specialtyService) {
-    this.specialtyService = specialtyService;
+  public VetMapService(SpecialityService specialityService) {
+    this.specialityService = specialityService;
   }
 
   @Override
@@ -22,7 +22,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
           .forEach(
               spec -> {
                 if (spec.getId() == null) {
-                  specialtyService.save(spec);
+                  specialityService.save(spec);
                 }
               });
     }

@@ -20,12 +20,10 @@ public class Pet extends BaseEntity {
   @Column(name = "telephone")
   private String name;
 
-  @Column(name = "pet_type")
   @ManyToOne
   @JoinColumn(name = "type_id")
   private PetType petType;
 
-  @Column(name = "owner")
   @ManyToOne
   @JoinColumn(name = "owner_id")
   private Owner owner;

@@ -20,14 +20,14 @@ public class Vet extends Person {
       name = "vet_specialties",
       joinColumns = @JoinColumn(name = "vet_id"),
       inverseJoinColumns = @JoinColumn(name = "specialty_id"))
-  private Set<Speciality> specialities = new HashSet<>();
+  private Set<Specialty> specialties = new HashSet<>();
 
-  public Set<Speciality> getSpecialities() {
-    return specialities;
+  public Set<Specialty> getSpecialities() {
+    return specialties;
   }
 
-  public void setSpecialities(Set<Speciality> specialities) {
-    this.specialities = specialities;
+  public void setSpecialities(Set<Specialty> specialties) {
+    this.specialties = specialties;
   }
 
   public static long getSerialversionuid() {
