@@ -1,6 +1,7 @@
 package ro.iss.guruclinic.boostrap;
 
 import java.time.LocalDate;
+import javax.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import ro.iss.guruclinic.model.Owner;
@@ -38,6 +39,7 @@ public class DataLoader implements CommandLineRunner {
   }
 
   @Override
+  @Transactional
   public void run(String... args) throws Exception {
     if (petTypeService.findAll().size() == 0) {
       loadData();
@@ -108,13 +110,13 @@ public class DataLoader implements CommandLineRunner {
     Vet vet1 = new Vet();
     vet1.setFirstName("Sam");
     vet1.setLastName("Axe");
-    vet1.getSpecialities().add(radiology);
+    vet1.getSpecialties().add(radiology);
     vetService.save(vet1);
 
     Vet vet2 = new Vet();
     vet2.setFirstName("Jessie");
     vet2.setLastName("Porter");
-    vet2.getSpecialities().add(surgery);
+    vet2.getSpecialties().add(surgery);
     vetService.save(vet2);
 
     System.out.println("Loaded Vets....");
