@@ -1,11 +1,13 @@
 package ro.iss.guruclinic.services.map;
 
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import ro.iss.guruclinic.model.Specialty;
 import ro.iss.guruclinic.services.SpecialityService;
 
 @Service
+@Profile({"default", "map"})
 public class SpecialityMapService extends AbstractMapService<Specialty, Long>
     implements SpecialityService {
 

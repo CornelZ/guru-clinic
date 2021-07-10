@@ -1,11 +1,13 @@
 package ro.iss.guruclinic.services.map;
 
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import ro.iss.guruclinic.model.Visit;
 import ro.iss.guruclinic.services.VisitService;
 
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
   @Override

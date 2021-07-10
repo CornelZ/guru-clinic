@@ -1,6 +1,7 @@
 package ro.iss.guruclinic.services.map;
 
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import ro.iss.guruclinic.model.Owner;
 import ro.iss.guruclinic.services.OwnerService;
@@ -8,6 +9,7 @@ import ro.iss.guruclinic.services.PetService;
 import ro.iss.guruclinic.services.PetTypeService;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
   private final PetTypeService petTypeService;

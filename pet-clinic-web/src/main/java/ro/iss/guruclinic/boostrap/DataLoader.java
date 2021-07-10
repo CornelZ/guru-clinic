@@ -8,10 +8,12 @@ import ro.iss.guruclinic.model.Pet;
 import ro.iss.guruclinic.model.PetType;
 import ro.iss.guruclinic.model.Specialty;
 import ro.iss.guruclinic.model.Vet;
+import ro.iss.guruclinic.model.Visit;
 import ro.iss.guruclinic.services.OwnerService;
 import ro.iss.guruclinic.services.PetTypeService;
 import ro.iss.guruclinic.services.SpecialityService;
 import ro.iss.guruclinic.services.VetService;
+import ro.iss.guruclinic.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -20,16 +22,19 @@ public class DataLoader implements CommandLineRunner {
   private final VetService vetService;
   private final PetTypeService petTypeService;
   private final SpecialityService specialityService;
+  private final VisitService visitService;
 
   public DataLoader(
       OwnerService ownerService,
       VetService vetService,
       PetTypeService petTypeService,
-      SpecialityService specialityService) {
+      SpecialityService specialityService,
+      VisitService visitService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
     this.specialityService = specialityService;
+    this.visitService = visitService;
   }
 
   @Override
@@ -91,6 +96,12 @@ public class DataLoader implements CommandLineRunner {
 
     owner2.getPets().add(fionasPet);
     ownerService.save(owner2);
+
+    Visit catVisit = new Visit();
+    catVisit.setPet(fionasPet);
+    catVisit.setDate(LocalDate.now());
+    catVisit.setDescription("Sneezy kitty");
+    visitService.save(catVisit);
 
     System.out.println("Loaded Owners....");
 
