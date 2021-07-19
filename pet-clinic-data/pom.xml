@@ -49,6 +49,11 @@
 			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<properties>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
@@ -61,7 +66,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.6</version><!--$NO-MVN-MAN-VER$-->
+				<version>2.22.6</version><!--$NO-MVN-MAN-VER$ -->
 				<dependencies>
 					<dependency>
 						<groupId>org.junit.provider</groupId>
