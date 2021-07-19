@@ -5,9 +5,11 @@ import javax.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString(callSuper = true)
 @NoArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity {
