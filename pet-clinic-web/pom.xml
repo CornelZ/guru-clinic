@@ -136,17 +136,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.6</version><!--$NO-MVN-MAN-VER$ -->
-				<dependencies>
-					<dependency>
-						<groupId>org.junit.provider</groupId>
-						<artifactId>junit-platform-surefire-provider</artifactId>
-						<version>$(junit-platform-version)</version>
-					</dependency>
-				</dependencies>
-			</plugin>
 		</plugins>
 	</build>
 </project>
